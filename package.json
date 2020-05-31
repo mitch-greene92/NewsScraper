@@ -1,0 +1,28 @@
+{
+  "name": "newsscraper",
+  "version": "1.0.0",
+  "description": "News Scraper App for HW12",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitchgreene92/NewsScraper.git"
+  },
+  "author": "Mitch Greene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mitchgreene92/NewsScraper/issues"
+  },
+  "homepage": "https://github.com/Mitchgreene92/NewsScraper#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mongoose": "^5.9.16",
+    "morgan": "^1.10.0"
+  }
+}

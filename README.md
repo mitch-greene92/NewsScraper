@@ -1,2 +1,4 @@
 # NewsScraper
-News Scraper app utilizing Mongoose and Cherio for HW11
+News Scraper app utilizing Mongoose and Cheerio for HW12
+
+

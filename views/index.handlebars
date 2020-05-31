@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <h1>NPR News Scraper</h1>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/saved">Saved Articles</a>
+      </li>
+      <li class="nav-item">
+        <button type="button" id="scrape-articles-btn" class="btn btn-primary">Scrape articles</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" id="clear-articles-btn" class="btn btn-danger">Clear articles</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="modal fade" id="articleSavedModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title articleSavedTitle">Article Saved</h5>
+      </div>
+      <div class="modal-body articleSavedBody">
+        <p>This article has been saved. Visit Saved Articles to review it.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary closeModalButton" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="scrapeArticlesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title articlesScrapedTitle">Articles Scraped</h5>
+      </div>
+      <div class="modal-body articlesScrapedBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary closeModalButton" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="articleContainer">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-10 articleColumn">
+      {{#each articles}}
+      <div class="card">
+        <div class="card-header">
+          <a class="headlineLink" href={{link}} target="_blank">{{title}}</a>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-5">
+              <img class="articleImage" src={{photo}}>
+            </div>
+            <div class="col-5">
+              <p>{{summary}}{{date}}</p>
+            </div>
+            <div class="col-2 buttonColumn">
+              <button type="button" class="btn btn-primary saveArticleButton" data-id={{id}}>Save Article</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="clearArticlesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title articlesScrapedTitle">Articles Cleared</h5>
+      </div>
+      <div class="modal-body">
+        <p>Articles have been cleared. Press the scrape button to load new articles.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary closeModalButton" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
